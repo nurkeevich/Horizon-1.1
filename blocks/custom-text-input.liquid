@@ -1,0 +1,83 @@
+<div class="custom-text-input">
+    <label for="custom-text-field">
+      {{ section.settings.label }}
+    </label>
+  
+    <input
+      id="custom-text-field"
+      type="text"
+      placeholder="{{ section.settings.placeholder }}"
+    >
+  </div>
+  
+  <style>
+  .custom-text-input {
+    margin-bottom: 16px;
+  }
+  
+  .custom-text-input label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  
+  .custom-text-input input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  </style>
+  
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var productForm = document.querySelector('form[action*="/cart/add"]');
+    if (!productForm) return;
+  
+    var visibleInput = document.querySelector('#custom-text-field');
+    if (!visibleInput) return;
+  
+    var propertyName = "{{ section.settings.label | default: 'Custom Text' | escape }}";
+  
+    if (!propertyName || propertyName.trim() === '') {
+      propertyName = 'Custom Text';
+    }
+  
+    var hiddenInput = document.createElement('input');
+    hiddenInput.type = 'hidden';
+    hiddenInput.name = 'properties[' + propertyName + ']';
+    hiddenInput.id = 'custom-hidden-text-field';
+  
+    productForm.appendChild(hiddenInput);
+  
+    visibleInput.addEventListener('input', function () {
+      hiddenInput.value = visibleInput.value;
+    });
+  });
+  </script>
+  
+  {% schema %}
+  {
+    "name": "Custom Text Input",
+    "settings": [
+      {
+        "type": "text",
+        "id": "label",
+        "label": "Field Label",
+        "default": "Company Name"
+      },
+      {
+        "type": "text",
+        "id": "placeholder",
+        "label": "Placeholder",
+        "default": "Enter company name"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Text Input"
+      }
+    ]
+  }
+  {% endschema %}
