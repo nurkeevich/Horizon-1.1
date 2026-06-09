@@ -6,7 +6,8 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
     "main": {
       "type": "product-information",
@@ -24,6 +25,7 @@
             "slideshow_mobile_controls_style": "dots",
             "thumbnail_position": "right",
             "thumbnail_width": 44,
+            "thumbnail_radius": 0,
             "aspect_ratio": "adapt",
             "constrain_to_viewport": true,
             "media_fit": "contain",
@@ -70,7 +72,6 @@
               "type": "group",
               "name": "Header",
               "settings": {
-                "open_in_new_tab": false,
                 "content_direction": "column",
                 "vertical_on_mobile": true,
                 "horizontal_alignment": "flex-start",
@@ -98,6 +99,9 @@
                 "overlay_color": "#00000026",
                 "overlay_style": "solid",
                 "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -183,11 +187,33 @@
               },
               "blocks": {}
             },
+            "custom_text_input_6yW8YB": {
+              "type": "custom-text-input",
+              "name": "Custom Text Input",
+              "settings": {
+                "label": "Message",
+                "placeholder": "Describe your design in more details"
+              },
+              "blocks": {}
+            },
+            "custom_file_upload_JiAApq": {
+              "type": "custom-file-upload",
+              "name": "Custom File Upload",
+              "settings": {
+                "upload_label": "Upload Your Logo / Design",
+                "helper_text": "Drag & drop or click to upload your logo/design files",
+                "button_text": "Browse Files",
+                "max_files": 5,
+                "max_file_size": 25
+              },
+              "blocks": {}
+            },
             "buy_buttons_eYQEYi": {
               "type": "buy-buttons",
               "settings": {
                 "stacking": true,
                 "show_pickup_availability": false,
+                "gift_card_form": true,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -248,6 +274,8 @@
             "group_icgrde",
             "divider_VJhene",
             "variant_picker_R3rGDr",
+            "custom_text_input_6yW8YB",
+            "custom_file_upload_JiAApq",
             "buy_buttons_eYQEYi",
             "text_aEtTtq"
           ]
@@ -259,6 +287,7 @@
         "equal_columns": false,
         "limit_details_width": false,
         "gap": 48,
+        "enable_sticky_add_to_cart": true,
         "color_scheme": "",
         "padding-block-start": 0,
         "padding-block-end": 0
